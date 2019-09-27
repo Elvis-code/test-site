@@ -53,7 +53,17 @@ if (isset($_POST['register_btn'])) {
             border: 2px solid;
             border-radius: 8px;
         }
-        
+
+        body {
+            background-image: url('foto/home.jpg');
+        }
+
+        .card {
+            background-color: #26262b9e;
+            color: white;
+
+        }
+
     </style>
 </head>
 <body>
@@ -103,7 +113,7 @@ if (isset($_POST['register_btn'])) {
                     <!-- confirm password -->
                     <div class="form-group ">
                         <label for="password2">Confirm Password:</label>
-                        <input type="password" name="password2" class="form-control form-control-sm" id="password2"
+                        <input type="password" name="password2" class="form-control col-sm" id="password2"
                                required>
 
                         <div class="valid-feedback">Valid</div>
@@ -116,7 +126,8 @@ if (isset($_POST['register_btn'])) {
 
                         </label>
                     </div>
-                    <button type="submit" class="btn btn-info" name="register_btn" data-toggle="tooltip" title="Register">Sign
+                    <button type="submit" class="btn btn-info" name="register_btn" data-toggle="tooltip"
+                            title="Register">Sign
                         Up
                     </button>
 
