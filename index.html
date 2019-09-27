@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/bootstrapjquery.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/proper.js"></script>
+
+    <title>Main Page</title>
+    <style>
+
+        #register {
+            color: dodgerblue;
+            display: inline-block;
+            text-align: center;
+
+        }
+
+        #login {
+            color: red;
+            display: inline-block;
+            text-align: center;
+
+        }
+
+        #register:hover {
+            background-color: dodgerblue;
+            color: black;
+        }
+
+        #login:hover {
+            background-color: red;
+            color: black;
+        }
+
+        h3, h4 {
+            text-align: center;
+            text-transform: uppercase;
+            font-family: serif, "Times New Roman";
+        }
+
+        #search {
+            border-bottom: 2px solid dodgerblue;
+        }
+
+    </style>
+
+</head>
+<body>
+<!-- krijimi i navbar -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark position-relative">
+    <!-- Brand -->
+    <a class="navbar-brand" href="https://getbootstrap.com">
+        <img src="foto/bootstrap.png" width="40" height="30" alt="">
+    </a>
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="mainpage.php">Home</a>
+        </li>
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                Other
+            </a>
+
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="https://edition.cnn.com/">News</a>
+                <a class="dropdown-item" href="https://www.youtube.com/">Music</a>
+            </div>
+        </li>
+        <li class="nav-item ml-5">
+            <form class="form-inline">
+                <input class="form-control form-control-sm ml-3" id="search" type="text" placeholder=" Search.."
+                       name="search"
+                       aria-label="search">
+                <button class="btn-sm btn-primary" type="submit"><i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </form>
+        </li>
+    </ul>
+    <!-- Krijimi i dropdown menu dhe about us ne te djathte te navbar permes ml-auto --->
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown mr-3">
+            <button type="button" class="btn-sm btn-primary dropdown-toggle" id="navbardrop1" data-toggle="dropdown"
+                    style="margin-top: 2px">
+                Portal
+            </button>
+            <div id="drop" class="dropdown-menu">
+                <!-- Krijimi i butona te register dhe login -->
+                <a class="dropdown-item" id="register" href="Register.php"><strong>Register</strong></a>
+                <a class="dropdown-item" id="login" href="login.php"><strong>Login</strong></a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">About us</a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <div id="carouselExample" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExample" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExample" data-slide-to="1"></li>
+            <li data-target="#carouselExample" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="d-block w-100" src="foto/slide1.jpg" alt="First slide" height="450">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="foto/slide2.jpg" alt="Second slide" height="450">
+            </div>
+            <div class="carousel-item">
+                <img class="d-block w-100" src="foto/slide3.jpg" alt="Third slide" height="450">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <!-- Krijimi i formes sipas card format -->
+    <div class="col d-flex justify-content-center">
+        <div class="card " style="margin-top: 52px">
+            <div class="card-body px-lg-5 pt-0">
+                <h3>What Are You Waiting For? </h3>
+                <h4>Hurry And Sign Up!</h4>
+                <!-- Krijimi i formes me komponentet e saj -->
+                <form method="post" action="Register.php" class="text-center was-validated">
+                    <!--   username -->
+                    <div class="form-group">
+
+                        <label for="username">Username:</label>
+                        <input type="text" name="username" class="form-control form-control-sm" id="username" required>
+
+                        <div class="valid-feedback">Valid</div>
+                        <!-- email -->
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" class="form-control form-control-sm" id="email" required>
+
+                        <div class="valid-feedback">Valid</div>
+
+                    </div>
+                    <!--password -->
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password" class="form-control form-control-sm" id="password"
+                               required
+                               min="7">
+
+                        <div class="valid-feedback">Valid</div>
+
+                    </div>
+                    <!-- confirm password -->
+                    <div class="form-group ">
+                        <label for="password2">Confirm Password:</label>
+                        <input type="password" name="password2" class="form-control form-control-sm" id="password2"
+                               required>
+
+                        <div class="valid-feedback">Valid</div>
+
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" name="remember" required> I agree the
+                            conditions
+
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-info" name="register_btn" data-toggle="tooltip"
+                            title="Register">Sign Up
+                    </button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Krijimi i tabeles -->
+    <table class="table table-dark table-hover" style="margin-top: 48px">
+        <caption style="color: black">List of users</caption>
+        <!-- cfare  permban tabela-->
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Elvis</td>
+            <td>Kovaci</td>
+            <td>elvis@gmail.com</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Artan</td>
+            <td>Kodra</td>
+            <td>kodra@gmail.com</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Beni</td>
+            <td>Fusha</td>
+            <td>bfusha@yahoo.com</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- krijimi i pagination -->
+    <nav aria-label="Page navigation example">
+        <ul class="pagination pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span title="Previous" aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span title="Next" aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small position-relative" style="margin-top: 48px">
+
+    <div style="background-color: dodgerblue;">
+        <div class="container">
+
+            <!-- Grid row-->
+            <div class="row py-4 d-flex align-items-center">
+
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+                    <h6 class="mb-0 text-white">Get connected with us on social networks!</h6>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+                    <!-- Facebook -->
+                    <a href="#" class="fb-ic">
+                        <i class="fa fa-facebook text-white mr-4"> </i>
+                    </a>
+                    <!-- Twitter -->
+                    <a href="#" class="tw-ic">
+                        <i class="fa fa-twitter text-white mr-4"> </i>
+                    </a>
+                    <!-- Google +-->
+                    <a href="#" class="gplus-ic">
+                        <i class="fa fa-google-plus text-white mr-4"> </i>
+                    </a>
+                    <!--Linkedin -->
+                    <a href="#" class="li-ic">
+                        <i class="fa fa-linkedin text-white mr-4"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a href="#" class="ins-ic">
+                        <i class="fa fa-instagram text-white  mr-4"> </i>
+                    </a>
+
+                </div>
+                <!-- Grid column -->
+
+            </div>
+            <!-- Grid row-->
+
+        </div>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center  text-white-50 py-3" style="background-color: darkslategray">© 2019
+        Copyright:
+        <a class="dark-grey-text" href="https://mdbootstrap.com/education/bootstrap/">Getbootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+</body>
+</html>
