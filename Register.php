@@ -1,4 +1,4 @@
-<?php include("head1.php");
+<?php include("header.php");
 session_start();
 
 //krijimi i userit
@@ -123,14 +123,12 @@ if (isset($_POST['register_btn'])) {
                         <label class="form-check-label">
                             <input class="form-check-input" type="checkbox" name="remember" required> I agree the
                             conditions
-
                         </label>
                     </div>
                     <button type="submit" class="btn btn-info" name="register_btn" data-toggle="tooltip"
                             title="Register">Sign
                         Up
                     </button>
-
                 </form>
             </div>
         </div>

@@ -25,7 +25,7 @@ session_start();
     <!-- Links -->
     <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="head1.php">Home</a>
+            <a class="nav-link" href="mainpage.php">Home</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Link 2</a>

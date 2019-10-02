@@ -1,4 +1,4 @@
-<?php include("head1.php");
+<?php include("header.php");
 session_start();
 
 //krijimi i userit
@@ -39,19 +39,18 @@ if (isset($_POST['login_btn'])) {
         }
 
         body {
-            background-image: url("foto/simple2.jpg");;
+            background-image: url('foto/home.jpg');
         }
-
-
-
 
         input[type="text"], [type="password"] {
             border: 2px solid;
             border-radius: 8px;
 
         }
-        .card{
-            width: 50%;
+        .card {
+            background-color: #26262b9e;
+            color: white;
+
         }
     </style>
 </head>
@@ -89,7 +88,7 @@ if (isset($_POST['login_btn'])) {
                     <br>
                     <button type="submit" class="btn btn-danger" name="login_btn" data-toggle="tooltip" title="Login">
                         Sign
-                        IN
+                        In
                     </button>
 
 

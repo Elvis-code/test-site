@@ -1,8 +1,8 @@
-<?php include("head1.php");
-$username="";
-$email="";
-$password="";
-$id=0;
+<?php include("header.php");
+$username = "";
+$email = "";
+$password = "";
+$id = 0;
 session_start();
 $edit_state = false;
 //krijimi i userit
@@ -20,16 +20,16 @@ if (isset($_POST['save_btn'])) {
 
 //updetimi i te dhenave
 if (isset($_POST['update_btn'])) {
-    $username=$_POST['username'];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    $id=$_POST['id'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $id = $_POST['id'];
     mysqli_query($db, "UPDATE users SET username='$username', email='$email', password='$password' WHERE id=$id");
     header("location:admpage.php");
 }
 if (isset($_GET['del'])) {
     $id = $_GET['del'];
-    mysqli_query($db,"DELETE FROM users WHERE id=$id");
+    mysqli_query($db, "DELETE FROM users WHERE id=$id");
     header('location: admpage.php');
 }
 // Nxjerrja e te dhenave ne tabela
@@ -37,13 +37,13 @@ $res = mysqli_query($db, "SELECT * FROM users");
 ?>
 <?php if (isset($_GET['edit'])) {
     $id = $_GET['edit'];
-    $edit_state= true;
-    $rec= mysqli_query($db, "SELECT * FROM users WHERE id=$id");
-    $record=mysqli_fetch_array($rec);
-    $username=$record['username'];
-    $email=$record['email'];
-    $password=$record['password'];
-    $id=$record['id'];
+    $edit_state = true;
+    $rec = mysqli_query($db, "SELECT * FROM users WHERE id=$id");
+    $record = mysqli_fetch_array($rec);
+    $username = $record['username'];
+    $email = $record['email'];
+    $password = $record['password'];
+    $id = $record['id'];
 } ?>
 <!DOCTYPE html>
 <html>
@@ -68,7 +68,8 @@ $res = mysqli_query($db, "SELECT * FROM users");
             font-family: serif, "Times New Roman";
             text-transform: uppercase;
         }
-        .btn{
+
+        .btn {
             color: white;
         }
     </style>
@@ -91,10 +92,14 @@ $res = mysqli_query($db, "SELECT * FROM users");
             <tr>
                 <th scope="row"><?php echo $row['username'] ?></th>
                 <td> <?php echo $row['email'] ?></td>
-                <td><a href="admpage.php?edit=<?php echo $row['id'];?>"><button type="submit" class="btn btn-success" name="save_btn" data-toggle="tooltip"
-                                                                                title="Save">Edit</button></td>
-                <td> <a href="admpage.php?del=<?php echo $row['id'];?>"><button class="btn btn-danger" name="save_btn" data-toggle="tooltip"
-                                                                                title="Delete">Delete</button></td>
+                <td><a href="admpage.php?edit=<?php echo $row['id']; ?>">
+                        <button type="submit" class="btn btn-success" name="save_btn" data-toggle="tooltip"
+                                title="Save">Edit
+                        </button></td>
+                <td><a href="admpage.php?del=<?php echo $row['id']; ?>">
+                        <button class="btn btn-danger" name="save_btn" data-toggle="tooltip"
+                                title="Delete">Delete
+                        </button></td>
             </tr>
         <?php } ?>
         </tbody>
@@ -113,17 +118,21 @@ $res = mysqli_query($db, "SELECT * FROM users");
                 ?>
                 <form method="post" action="admpage.php">
                     <input type="hidden" name="id" value="<?php echo $id ?>">
+
                     <div class="form-group">
                         <label for="username">Username:</label>
-                        <input type="text" name="username" class="form-control form-control-sm col-sm-6" id="username"  required value="<?php echo $username ?>">
+                        <input type="text" name="username" class="form-control form-control-sm col-sm-6" id="username"
+                               required value="<?php echo $username ?>">
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" name="email" class="form-control form-control-sm col-sm-6" id="email" required value="<?php echo $email ?>">
+                        <input type="email" name="email" class="form-control form-control-sm col-sm-6" id="email"
+                               required value="<?php echo $email ?>">
                     </div>
                     <div class="form-group">
                         <label for="password">Password:</label>
-                        <input type="password" name="password" class="form-control form-control-sm col-sm-6" id="password"
+                        <input type="password" name="password" class="form-control form-control-sm col-sm-6"
+                               id="password"
                                required
                                min="7" value="<?php echo $password ?>">
                     </div>
@@ -131,10 +140,9 @@ $res = mysqli_query($db, "SELECT * FROM users");
                         <button type="submit" class="btn btn-info" name="save_btn" data-toggle="tooltip"
                                 title="Save">Save
                         </button>
-                    <?php }
-                     else{ ?>
+                    <?php } else { ?>
                         <button type="submit" class="btn btn-info" name="update_btn" data-toggle="tooltip"
-                               title="Update">Update
+                                title="Update">Update
                         </button>
                     <?php } ?>
                 </form>
